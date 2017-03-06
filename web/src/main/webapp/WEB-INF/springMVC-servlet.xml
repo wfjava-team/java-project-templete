@@ -9,6 +9,7 @@
                         http://www.springframework.org/schema/context/spring-context.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--开启自动扫描-->
     <mvc:annotation-driven/>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@Controller注解的类是控制器 -->
     <context:component-scan base-package="com.wanfangdata.javatemplete.web" />

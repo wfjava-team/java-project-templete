@@ -45,7 +45,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
-  <!--配置访问根目录默认访问IndexController-->
+  <!--如果web.xml中没有welcome-file-list节点（tomcat和jetty服务器）会跳转到index.html页面，如果没有index.html会跳转到index.jsp-->
   <welcome-file-list>
     <welcome-file></welcome-file>
   </welcome-file-list>
