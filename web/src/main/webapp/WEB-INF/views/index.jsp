@@ -1,0 +1,28 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>java项目模板</h1>
+    <div>
+        <h2>1、springmvc</h2>
+        <h3>目录结构补充说明：</h3>
+        <p>
+            main/java：Java代码<br/>
+            main/java/web：controller<br/>
+            main/java/util：工具类<br/>
+            resource:资源文件<br/>
+            webapp/content:前端文件
+            webapp/content/css:样式表
+            webapp/content/images:图片
+            webapp/content/js:js文件
+            webapp/content/js/lib:js库文件
+            webapp/content/module:前端组件
+            webapp/WEB-INF/views:视图文件
+        </p>
+    </div>
+</div>
+</body>
+</html>
