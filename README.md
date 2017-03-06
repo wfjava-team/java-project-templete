@@ -1,2 +1,2 @@
-# java-project-templete
-java项目模板
+# java项目模板
+**web：** springMVC项目
