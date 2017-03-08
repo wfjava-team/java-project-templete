@@ -16,4 +16,6 @@ public class IndexController {
     public String index() {
         return "index";
     }
+    @RequestMapping("/beetl")
+    public String beetl(){return "/views/beetlpage";}
 }
