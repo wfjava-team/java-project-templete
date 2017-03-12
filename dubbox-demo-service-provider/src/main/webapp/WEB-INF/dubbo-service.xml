@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="service-provider"
+                       owner="programmer" organization="dubbox"/>
+
+    <dubbo:registry protocol="zookeeper" address="localhost:2181"/>
+
+    <dubbo:protocol name="rest" port="8180"
+                    contextpath="accountingservice" server="servlet"
+                    extension="com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <bean id="sayHello" class="com.wanfangdata.demo.impl.SayHelloImpl"></bean>
+    <dubbo:service interface="com.wanfangdata.demo.SayHello"
+                   ref="sayHello" protocol="dubbo" validation="true" retries="0" timeout="10000"/>
+
+</beans>

@@ -24,6 +24,7 @@
         </p>
         <p>
             <a href="/beetl">beetl样例页面</a>
+            <a href="/dubbo">dubbo样例页面</a>
         </p>
     </div>
 </div>
