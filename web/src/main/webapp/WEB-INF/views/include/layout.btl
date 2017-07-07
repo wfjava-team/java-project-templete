@@ -4,12 +4,12 @@
     <title>${title}</title>
 </head>
 <body>
-layout模板内容（layout.btl）
+layout模板内容header上边（layout.btl）
 <?include("/views/include/header.btl"){}?>
-layout模板内容（layout.btl）
+layout模板内容content上边（layout.btl）
 ${layoutContent}
-layout模板内容（layout.btl）
+layout模板内容content下边，footer下边（layout.btl）
 <?include("/views/include/footer.btl"){}?>
-layout模板内容（layout.btl）
+layout模板内容，footer下边（layout.btl）
 </body>
 </html>

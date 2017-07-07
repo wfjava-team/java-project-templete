@@ -2,6 +2,6 @@
 layout("/views/include/layout.btl",{title:'beetl样例页'}){
 ?>
 <div>
-页面主体（beetlpage.btl）<a href="${ctxPath}/">返回主页</a>${ctxPath}
+页面主体（beetlpage.btl）<a href="${ctxPath}/">返回主页</a>
 </div>
 <?}?>

@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.wanfangdata</groupId>
             <artifactId>dubbox-demo-api</artifactId>
             <version>${project.parent.version}</version>
@@ -26,6 +30,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
         <!--上传-->
         <dependency>

@@ -2,19 +2,34 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
     <!--开启自动扫描-->
     <mvc:annotation-driven/>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@Controller注解的类是控制器 -->
     <context:component-scan base-package="com.wanfangdata.javatemplete.web" />
     <!-- 静态资源文件 -->
     <mvc:default-servlet-handler />
+
+    <!--EhCache配置开始-->
+    <!-- 启用缓存注解功能-->
+    <cache:annotation-driven cache-manager="cacheManager"/>
+    <!-- Spring提供的基于的Ehcache实现的缓存管理器 -->
+    <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:ehcache.xml"/>
+    </bean>
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="cacheManagerFactory"/>
+    </bean>
+    <!--EhCache配置结束-->
+    <!--用于测试cache的计数器-->
+    <bean id="counter" class="com.wanfangdata.javatemplete.util.RandomNum"/>
+
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
@@ -37,6 +52,7 @@
         </property>
     </bean>
 
+    <!--Beetl配置文件引入-->
     <bean name="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration"
           init-method="init">
         <property name="configFileResource" value="classpath:beetl.properties" />

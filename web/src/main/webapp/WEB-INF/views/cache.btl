@@ -1,0 +1,2 @@
+<div>随机数（配置了5s缓存）：${num}</div>
+<a href="${ctxPath}/">返回主页</a> <a href="${ctxPath}/cache">刷新</a>
